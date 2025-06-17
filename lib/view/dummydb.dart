@@ -18,4 +18,9 @@ class Dummydb {
     "On Thu,28 Mar 2024",
     "On Wed,10 Apr 2025"
   ];
+
+  List price = [
+    "₹ 1,499",
+    "₹ 1,999"
+  ];
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myntratask/view/dummydb.dart';
+import 'package:myntratask/view/orderdetails.dart';
 
 class Orders extends StatefulWidget {
   const Orders({super.key});
@@ -159,58 +160,61 @@ class _OrdersState extends State<Orders> {
                           SizedBox(
                             height: 10,
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(10),
-                                        child: Image.asset(
-                                          Dummydb().images[index],
-                                          height: 70,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Column(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text("Roadster",
-                                              style: GoogleFonts.roboto(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold,
-                                              )),
-                                          Text(Dummydb().desc[index],
-                                              style: GoogleFonts.roboto(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.normal,
-                                                color: Colors.grey[600],
-                                              )),
-                                          Text("Size : 42",
-                                              style: GoogleFonts.roboto(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.normal,
-                                                color: Colors.grey[600],
-                                              )),
-                                        ],
-                                      ),
-                                    ],
-                                  )
-                                ],
+                          InkWell(
+                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Orderdetails(index: index,))),  
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                borderRadius: BorderRadius.circular(10),
                               ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(10),
+                                          child: Image.asset(
+                                            Dummydb().images[index],
+                                            height: 70,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Roadster",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                            Text(Dummydb().desc[index],
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: Colors.grey[600],
+                                                )),
+                                            Text("Size : 42",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: Colors.grey[600],
+                                                )),
+                                          ],
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                              height: 100,
+                              width: double.infinity,
                             ),
-                            height: 100,
-                            width: double.infinity,
                           ),
                           SizedBox(
                             height: 10,
