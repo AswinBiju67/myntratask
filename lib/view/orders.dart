@@ -71,7 +71,7 @@ class _OrdersState extends State<Orders> {
                           IconButton(
                             icon: Icon(Icons.filter_list, color: Colors.grey[600]),
                             onPressed: () {
-                              // Add filter functionality here
+                              showModalBottomSheet(context: context, builder: (context) => Container());
                             },
                           ),
                           Text("FILTER",

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -313,9 +315,167 @@ class _OrderdetailsState extends State<Orderdetails> {
                                     color: Colors.black,
                                   )),
                                   SizedBox(width: 5),
-                                  Icon(Icons.arrow_drop_down,
-                                      size: 15,
-                                      color: Colors.red),
+                                  InkWell(
+                                    onTap: () {
+                                      showModalBottomSheet(context: context, builder: (context) => Container(
+                                        height: 370,
+                                        width: double.infinity,
+                                        color: Colors.white,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text("Payment Information",
+                                                    style: GoogleFonts.roboto(
+                                                      fontSize: 20,
+                                                      fontWeight: FontWeight.bold,
+                                                      color: Colors.black,
+                                                    )),
+                                                    CircleAvatar(radius: 40,
+                                                    backgroundImage: AssetImage(Dummydb().images[widget.index!]),)
+                                                ],
+                                              ),
+                                              SizedBox(height: 20),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text("MRP",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.grey[600],
+                                                )),
+                                                Text("₹2999",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black,
+                                                )),
+                                                ],
+                                              ),
+                                              SizedBox(height: 10),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text("Discount",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.grey[600],
+                                                )),
+                                                Text("-₹999",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black,
+                                                )),
+                                                ],
+                                              ),
+                                              SizedBox(height: 10),
+                                              Container(
+                                                height: 2,
+                                                width: double.infinity,
+                                                color: Colors.grey[300],
+                                              ),
+                                              SizedBox(height: 10),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text("Discounted Price",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.grey[600],
+                                                )),
+                                                Text("₹2000",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black,
+                                                )),
+                                                ],
+                                              ),
+                                              SizedBox(height: 10),
+                                              Container(
+                                                height: 2,
+                                                width: double.infinity,
+                                                color: Colors.grey[300],
+                                              ),
+                                              SizedBox(height: 10),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text("Coupon discount",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.grey[600],
+                                                )),
+                                                Text("-₹500",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black,
+                                                )),
+                                                ],
+                                              ),
+                                              SizedBox(height: 10),
+                                              Container(
+                                                height: 2,
+                                                width: double.infinity,
+                                                color: Colors.grey[300],
+                                              ),
+                                              SizedBox(height: 10),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text("Total Paid",
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.grey[600],
+                                                )),
+                                                Text(Dummydb().price[widget.index!],
+                                                style: GoogleFonts.roboto(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black,
+                                                )),
+                                                
+                                                ],
+                                              ),
+                                              SizedBox(height: 10),
+                                              Container(
+                                                height: 40,
+                                                color: Colors.grey[200],
+                                                width: double.infinity,
+                                                child: Row(
+                            children: [
+                              Image.asset("assets/images/2-512.webp",
+                                  height: 30, width: 30, fit: BoxFit.cover),
+                                  SizedBox(width: 10),
+                                  Text("Pay on delivery",
+                                    style: GoogleFonts.roboto(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey[600],
+                                    )),
+                            ],
+                          ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),);
+                                    },
+                                    child: Icon(Icons.arrow_drop_down,
+                                        size: 15,
+                                        color: Colors.red),
+                                  ),
                             ],
                           ),
                         ],
@@ -344,11 +504,96 @@ class _OrderdetailsState extends State<Orderdetails> {
                             ],
                           ),
                         ),
-                      )
+                      ),
+                     
                     ],
                   ),
                 ),
               ),
+               SizedBox(height: 10),
+               Container(
+                height: 100,
+                width: double.infinity,
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 10),
+                      Text("Sold by: Truenet Commerce ",
+                          style: GoogleFonts.roboto(
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.grey[600],
+                          )),
+                          SizedBox(height: 10),
+                          Container(
+                            height: 40,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(color: Colors.grey[500]!),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text("Get Invoice",
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.grey[600],
+                                  )),
+                              ),
+                            ),
+                          ),
+                    ],
+                  ),
+                ),
+               ),
+               SizedBox(height: 20),
+               Container(
+                height: 110,
+                width: double.infinity,
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Updates sent to",
+                          style: GoogleFonts.roboto(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          )),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Icon(Icons.phone, color: Colors.grey[600], size: 14),
+                              SizedBox(width: 10),
+                              Text("1245789632",style: GoogleFonts.roboto(
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),)
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Icon(Icons.email_outlined, color: Colors.grey[600], size: 14),
+                              SizedBox(width: 10),
+                              Text("aswin@gmail.com",style: GoogleFonts.roboto(
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),)
+                            ],
+                          ),
+                    ],
+                  ),
+                ),
+               )
             ],
           ),
         ),
