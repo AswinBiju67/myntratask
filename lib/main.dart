@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 import 'package:myntratask/view/orders.dart';
 
 void main() {
@@ -7,7 +8,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
