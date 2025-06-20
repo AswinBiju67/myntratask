@@ -30,4 +30,10 @@ class Dummydb {
     "assets/images/s3.webp",
     "assets/images/s4.webp",
   ];
+
+  List pn=[
+    "assets/images/1 (1).jpeg",
+    "assets/images/1 (1).webp", 
+    "assets/images/1 (2).jpeg",
+  ];
 }

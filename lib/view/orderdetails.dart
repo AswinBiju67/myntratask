@@ -237,6 +237,106 @@ class _OrderdetailsState extends State<Orderdetails> {
                 ),
               ),
               SizedBox(height: 20),
+               Container(
+              height:250,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+               ),
+               child: Padding(
+                 padding: const EdgeInsets.all(8.0),
+                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                  Text("Item that go well with this item",
+                      style: GoogleFonts.roboto(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      )),
+                      SizedBox(height: 10,),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: List.generate(Dummydb().pn.length, (index) => Padding(
+                            padding: const EdgeInsets.only(right: 8),
+                            child: Container(
+                              height: 200,
+                              width: 160,
+                             
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: Colors.grey, width: 1),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    
+                                    SizedBox(width: 10,),
+                                    Column( 
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Image.asset(Dummydb().pn[index], fit: BoxFit.cover,
+                                    height: 100,
+                                    width: 100,),
+                                    SizedBox(height: 10,),
+                                      Row(
+                                        
+                                        children: [
+                                          Text("Roadster ",
+                                              style: GoogleFonts.roboto(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                              )),
+                                              SizedBox(width: 55,),
+                                              Icon(Icons.favorite, color: Colors.red, size: 14,),
+                                        ],
+                                      ),
+                                          Text("The Lifestyle Co.",
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.normal,
+                                            color: Colors.grey[600],
+                                          )),Row(
+                                            children: [
+                                             
+                                              Text("₹714",
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                          SizedBox(width: 5,),
+                                           Text("₹1299",
+                                              style: GoogleFonts.roboto(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.grey[600],
+                                                textStyle: TextStyle(decoration: TextDecoration.lineThrough, decorationThickness: 2.0, decorationStyle: TextDecorationStyle.solid,)
+                                              )),
+                                          SizedBox(width: 5,),
+                                          Text("(45 OFF)",
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.red
+                                          )),
+                                            ],
+                                          ),
+                                          
+                                    ],)
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),),
+                        ),
+                      )
+                 ],),
+               ),
+            ),
+              SizedBox(height: 20),
               Container(
                 height: 100,
                 width: double.infinity,
