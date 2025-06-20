@@ -23,4 +23,11 @@ class Dummydb {
     "₹ 1,499",
     "₹ 1,999"
   ];
+
+  List sp =[
+    "assets/images/647-x-695-0-500x500.webp",
+    "assets/images/s2.jpeg",
+    "assets/images/s3.webp",
+    "assets/images/s4.webp",
+  ];
 }

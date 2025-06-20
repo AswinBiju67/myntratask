@@ -12,7 +12,7 @@ class Orders extends StatefulWidget {
 }
 
 class _OrdersState extends State<Orders> {
-  // Variables to track filter selections
+
   String? selectedStatus;
   String? selectedTime;
 
@@ -34,6 +34,65 @@ class _OrdersState extends State<Orders> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Container(
+              decoration: BoxDecoration(
+                // color: Colors.blue[50],
+                gradient: LinearGradient(
+                  colors: [Color.fromARGB(255, 198, 186, 246), Color(0xFFffc1d5)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              height: 75,
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("MYNTRA INSIDER",
+                            style: GoogleFonts.roboto(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            )),
+                            Text("Earn 10 supercions for every ₹100 purchase",
+                            style: GoogleFonts.roboto(
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.grey[600],
+                            )),
+                      ],
+                    ),
+                
+                    Container(
+                      height: 50,
+                      width: 80,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFff3f6c),
+                        borderRadius: BorderRadius.circular(10),
+                  
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("Enroll \n Now",
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  )),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
             Container(
               color: Colors.white,
               width: double.infinity,
@@ -85,6 +144,108 @@ class _OrdersState extends State<Orders> {
                   ],
                 ),
               ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 150,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.blue[50],
+               ),
+               child: Padding(
+                 padding: const EdgeInsets.all(8.0),
+                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                  Text("Frequently bought together",
+                      style: GoogleFonts.roboto(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      )),
+                      SizedBox(height: 10,),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: List.generate(Dummydb().sp.length, (index) => Padding(
+                            padding: const EdgeInsets.only(right: 8),
+                            child: Container(
+                              height: 95,
+                              width: 250,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: Colors.grey, width: 1),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Image.asset(Dummydb().sp[index], fit: BoxFit.cover,
+                                    height: 50,),
+                                    SizedBox(width: 10,),
+                                    Column( 
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                      Text("Park Avenue ",
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                          Text("Body Spray",
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                          )),Row(
+                                            children: [
+                                              Text("₹299",
+                                              style: GoogleFonts.roboto(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.grey[600],
+                                                textStyle: TextStyle(decoration: TextDecoration.lineThrough, decorationThickness: 2.0, decorationStyle: TextDecorationStyle.solid,)
+                                              )),
+                                              SizedBox(width: 5,),
+                                              Text("₹99",
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                          SizedBox(width: 5,),
+                                          Text("56 OFF",
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.orangeAccent
+                                          )),
+                                            ],
+                                          ),
+                                          Container(
+                                            height: 20,
+                                            
+                                            decoration: BoxDecoration(
+                                              color: Colors.grey[200],
+                                              borderRadius: BorderRadius.circular(5),
+                                            ),
+                                            child: Text("100-150gm",
+                                              style: GoogleFonts.roboto(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.grey[600],
+                                              )),
+                                          )
+                                    ],)
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),),
+                        ),
+                      )
+                 ],),
+               ),
             ),
             Column(
               children: List.generate(
