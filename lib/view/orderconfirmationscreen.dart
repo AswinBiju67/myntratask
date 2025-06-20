@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:myntratask/view/livetracking.dart';
+import 'package:myntratask/view/deliverytracking.dart';
 
 class OrderConfirmationScreen extends StatefulWidget {
    OrderConfirmationScreen({super.key});
@@ -18,7 +18,7 @@ class _OrderConfirmationScreenState extends State<OrderConfirmationScreen> {
     // Navigate to LiveTrackingScreen after 30 seconds
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(context, MaterialPageRoute(
-        builder: (context) => Livetracking(),
+        builder: (context) => DeliveryTrackingScreen(),
       ));
     });
   }

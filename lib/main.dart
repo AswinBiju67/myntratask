@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myntratask/view/orderconfirmationscreen.dart';
 
 
 import 'package:myntratask/view/orders.dart';
@@ -20,7 +21,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
      
       debugShowCheckedModeBanner: false,
-      home: Orders(),
+      home: OrderConfirmationScreen(),
 );
 }
 }
